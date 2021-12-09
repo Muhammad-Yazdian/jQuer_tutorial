@@ -1,0 +1,33 @@
+<html>
+
+<head>
+  <title>jQuery - each()</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+  <h1>jQuery - each</h1>
+  <h2>Syntax</h2>
+  <p>$.each(arr, function(ind, val){...})</p>
+  <h2>Example</h2>
+  <h3>Input</h3>
+  <p>var arrayNumbers = ['01', '02', '03', '04', '05']</p>
+  <h3>Output</h3>
+  <div id="output"></div>
+  <br>
+  <div id="output2"></div>
+  <script>
+    var arrayNumbers = ['01', '02', '03', '04', '05'];
+    var outputText = "";
+    $.each(arrayNumbers, function (index, value) {
+      outputText += value + " | ";
+    });
+    $('#output').text(outputText);
+    var outputText2 = "";
+    $.each(arrayNumbers, function (index, value) {
+      outputText2 += value + " | ";
+      return (value !== '04');
+    });
+    $('#output2').text(outputText2);
+  </script>
+</body> 
